@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3333
 
-CMD ["sh", "-c", "npm run migrate && npm start"]
+CMD ["npm", "start"]

@@ -9,6 +9,10 @@ class UserRepository {
         return await db.select("*").from("users")
     }
 
+    async findById(id) {
+        return await db.select("*").from("users").where("users.id", id).first()
+    }
+
     async findByEmail(email) {
         return await db.select("*").from("users").where("users.email", email).first()
     }

@@ -14,13 +14,29 @@ class AuthController {
     }
 
     async login(request, response) {
-        const token = await this.authService.login(request.body)
-        if (!token) return response.status(401).json({
+        const tokens = await this.authService.login(request.body)
+        if (!tokens) return response.status(401).json({
             status: "error",
             message: "Invalid credentials. Please check your username and password and try again.",
             code: 401
         })
-        return response.status(200).json({ token })
+        return response.status(200).json(tokens)
+    }
+
+    async refreshAccessToken(request, response) {
+        const { refreshToken } = request.cookies
+        if (!refreshToken) return response.status(401).json({
+            status: "error",
+            message: "Refresh token missing. Please log in again.",
+            code: 401
+        })
+        const accessToken = await this.authService.refreshAccessToken(refreshToken)
+        if (!accessToken) return response.status(401).json({
+            status: "error",
+            message: "Invalid or expired refresh token. Please log in again.",
+            code: 401
+        })
+        return response.status(200).json({ accessToken })
     }
 }
 

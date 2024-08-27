@@ -21,12 +21,36 @@ class AuthService {
         const { email, password } = userData
         const user = await this.userRepository.findByEmail(email)
         if (!user || !bcrypt.compareSync(password, user?.password)) return null
-        const token = jwt.sign(
+        const accessToken = jwt.sign(
             { name: user.name },
-            process.env.JWT_SECRET,
-            { expiresIn: 300, subject: user.id }
+            process.env.ACCESS_TOKEN_SECRET,
+            { expiresIn: "5m", subject: user.id }
         )
-        return token
+        const refreshToken = jwt.sign(
+            {}, process.env.REFRESH_TOKEN_SECRET,
+            { expiresIn: "15d", subject: user.id }
+        )
+        return { accessToken, refreshToken }
+    }
+
+    async refreshAccessToken(refreshToken) {
+        try {
+            const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET)
+            const userId = decoded.sub;
+            const user = await this.userRepository.findById(userId)
+
+            if (!user) return null
+
+            const newAccessToken = jwt.sign(
+                { name: user.name },
+                process.env.ACCESS_TOKEN_SECRET,
+                { expiresIn: "5m", subject: user.id }
+            )
+
+            return newAccessToken
+        } catch (error) {
+            return null
+        }
     }
 }
 
