@@ -3,8 +3,8 @@ const jwt = require("jsonwebtoken")
 function verifyToken(request, response, next) {
     if (request.path === "/api/register" || request.path === "/api/login" || request.path === "/api/refresh") return next()
     const authorization = request.headers["authorization"]
-    if (!authorization) return response.status(401).json({
-        status: "error",
+if (!authorization) return response.status(401).json({
+    status: "error",
         message: "Missing JWT token. Please provide a valid JWT token in the Authorization header to access this resource.",
         code: 401
     })
@@ -15,6 +15,7 @@ function verifyToken(request, response, next) {
             message: "Invalid or expired JWT token. Please provide a valid JWT token in the Authorization header to access this resource.",
             code: 401
         })
+        request.userId = decoded.sub
         next()
     })
 }

@@ -4,12 +4,18 @@ const AuthService = require("./services/authService")
 const AuthController = require("./controllers/authController")
 const UserService = require("./services/userService")
 const UserController = require("./controllers/userController")
+const TicketRepository = require("./repositories/ticketRepository")
+const TicketService = require("./services/ticketService")
+const TicketController = require("./controllers/ticketController")
 
 const userRepository = new UserRepository()
 const authService = new AuthService(userRepository)
 const authController = new AuthController(authService)
 const userService = new UserService(userRepository)
 const userController = new UserController(userService)
+const ticketRepository = new TicketRepository()
+const ticketService = new TicketService(ticketRepository)
+const ticketController = new TicketController(ticketService)
 
 const routes = express.Router()
 
@@ -17,5 +23,9 @@ routes.post("/register", async (request, response) => await authController.regis
 routes.post("/login", async (request, response) => await authController.login(request, response))
 routes.post("/refresh", async (request, response) => await authController.refreshAccessToken(request, response))
 routes.get("/users", async (request, response) => await userController.listAll(request, response))
+routes.post("/tickets", async (request, response) => await ticketController.create(request, response))
+routes.get("/tickets", async (request, response) => await ticketController.listAll(request, response))
+routes.get("/tickets/:id", async (request, response) => await ticketController.findById(request, response))
+routes.post("/validate", async (request, response) => await ticketController.validateTicket(request, response))
 
 module.exports = routes
