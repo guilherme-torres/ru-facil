@@ -10,7 +10,6 @@ class TicketService {
     async create(userId) {
         const activeTickets = await this.ticketRepository.countActiveTickets(userId)
         const activeTicketsCount = activeTickets[0].count
-        console.log(activeTicketsCount)
 
         if (activeTicketsCount >= 5) throw new Error("You have reached the maximum limit of active tickets allowed.")
 

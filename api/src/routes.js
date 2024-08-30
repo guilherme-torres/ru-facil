@@ -7,6 +7,8 @@ const UserController = require("./controllers/userController")
 const TicketRepository = require("./repositories/ticketRepository")
 const TicketService = require("./services/ticketService")
 const TicketController = require("./controllers/ticketController")
+const PixService = require("./services/pixService")
+const PixController = require("./controllers/pixController")
 
 const userRepository = new UserRepository()
 const authService = new AuthService(userRepository)
@@ -16,6 +18,8 @@ const userController = new UserController(userService)
 const ticketRepository = new TicketRepository()
 const ticketService = new TicketService(ticketRepository)
 const ticketController = new TicketController(ticketService)
+const pixService = new PixService(ticketRepository)
+const pixController = new PixController(pixService)
 
 const routes = express.Router()
 
@@ -27,5 +31,6 @@ routes.post("/tickets", async (request, response) => await ticketController.crea
 routes.get("/tickets", async (request, response) => await ticketController.listAll(request, response))
 routes.get("/tickets/:id", async (request, response) => await ticketController.findById(request, response))
 routes.post("/validate", async (request, response) => await ticketController.validateTicket(request, response))
+routes.post("/qrcode", async (request, response) => await pixController.generatePixQrcode(request, response))
 
 module.exports = routes
