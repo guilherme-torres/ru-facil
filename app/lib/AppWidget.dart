@@ -1,4 +1,5 @@
-import 'package:app_flutter/features/splash/splash_page.dart';
+import 'package:app_flutter/features/onboarding/onboarding_page.dart';
+//import 'package:app_flutter/features/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +16,13 @@ class AppWidget extends StatefulWidget {
 class _MyWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: SplashPage());
+    return MaterialApp(
+        theme: ThemeData(
+          inputDecorationTheme: const InputDecorationTheme(
+            focusedBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+          ),
+        ),
+        home: const OnboardingPage());
   }
 }

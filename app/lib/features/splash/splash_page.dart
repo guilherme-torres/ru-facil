@@ -15,7 +15,7 @@ class SplashPage extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              AppColors.azulEscuro,
+              AppColors.azulEscuro1,
               AppColors.brancoFosco,
             ],
           ),
@@ -32,7 +32,7 @@ class SplashPage extends StatelessWidget {
             Text(
               'RU fácil',
               style:
-                  AppTextStyle.bigText.copyWith(color: AppColors.brancoFosco),
+                  AppTextStyle.bigText1.copyWith(color: AppColors.brancoFosco),
             ),
           ],
         ),
