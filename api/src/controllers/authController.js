@@ -38,6 +38,20 @@ class AuthController {
         })
         return response.status(200).json({ accessToken })
     }
+
+    async verifyEmail(request, response) {
+        try {
+            const { token } = request.query
+            await this.authService.verifyEmail(token)
+            return response.sendStatus(200)
+        } catch (error) {
+            return response.status(400).json({
+                status: "error",
+                message: error.message,
+                code: 400
+            })
+        }
+    }
 }
 
 module.exports = AuthController

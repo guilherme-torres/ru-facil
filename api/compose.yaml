@@ -40,6 +40,13 @@ services:
       - EFI_CERT_PROD
       - PIX_KEY
       - TICKET_UNIT_PRICE
+      - EMAIL_USER
+      - EMAIL_PASSWORD
+      - EMAIL_SERVICE
+      - EMAIL_TOKEN_SECRET
+      - OAUTH_CLIENTID
+      - OAUTH_CLIENT_SECRET
+      - OAUTH_REFRESH_TOKEN
     develop:
       watch:
         - action: sync+restart
