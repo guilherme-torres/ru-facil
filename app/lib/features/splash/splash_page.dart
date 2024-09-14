@@ -1,9 +1,36 @@
+import 'dart:async';
 import 'package:app_flutter/common/constant/app_colors.dart';
+import 'package:app_flutter/common/constant/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:app_flutter/common/constant/app_text_style.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  Timer init() {
+    return Timer(
+      const Duration(seconds: 2),
+      navegatorToSignUpPage,
+    );
+  }
+
+  void navegatorToSignUpPage() {
+    Navigator.pushReplacementNamed(
+      context,
+      NamedRoutes.inicial,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

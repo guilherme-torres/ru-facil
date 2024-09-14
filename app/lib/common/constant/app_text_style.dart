@@ -14,6 +14,16 @@ class AppTextStyle {
     fontSize: 40,
     fontWeight: FontWeight.w700,
   );
+  static const TextStyle bigText = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 40,
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle mediumText1 = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 30,
+    fontWeight: FontWeight.w700,
+  );
   static const TextStyle subText1 = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 20,
