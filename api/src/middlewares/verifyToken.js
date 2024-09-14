@@ -1,7 +1,13 @@
 const jwt = require("jsonwebtoken")
 
 function verifyToken(request, response, next) {
-    if (request.path === "/api/register" || request.path === "/api/login" || request.path === "/api/refresh") return next()
+    console.log(`${request.method} ${request.path}`)
+    if (
+        request.path === "/api/register" ||
+        request.path === "/api/login" ||
+        request.path === "/api/refresh" ||
+        request.path === "/api/verify") return next()
+
     const authorization = request.headers["authorization"]
 if (!authorization) return response.status(401).json({
     status: "error",

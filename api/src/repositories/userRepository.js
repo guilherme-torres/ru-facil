@@ -16,6 +16,10 @@ class UserRepository {
     async findByEmail(email) {
         return await db.select("*").from("users").where("email", email).first()
     }
+
+    async updateByEmail(email, data) {
+        return await db("users").where("email", email).update(data)
+    }
 }
 
 module.exports = UserRepository

@@ -24,6 +24,7 @@ const pixController = new PixController(pixService)
 const routes = express.Router()
 
 routes.post("/register", async (request, response) => await authController.register(request, response))
+routes.get("/verify", async (request, response) => await authController.verifyEmail(request, response))
 routes.post("/login", async (request, response) => await authController.login(request, response))
 routes.post("/refresh", async (request, response) => await authController.refreshAccessToken(request, response))
 routes.get("/users", async (request, response) => await userController.listAll(request, response))
