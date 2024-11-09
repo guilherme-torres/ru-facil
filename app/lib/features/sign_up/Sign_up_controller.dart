@@ -25,7 +25,7 @@ class SignUpController extends ChangeNotifier {
         password: password,
       );
       _changeState(SignUpSucessState());
-      throw Exception('Erro ao logar');
+      //throw Exception('Erro ao logar');
     } catch (e) {
       _changeState(SignUpErrorState(e.toString()));
     }

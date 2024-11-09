@@ -1,5 +1,5 @@
 import 'package:app_flutter/common/constant/routes.dart';
-import 'package:app_flutter/features/EmailValidating/EmailValidating.dart';
+import 'package:app_flutter/features/EmailValidating/EmailValidatingPage.dart';
 import 'package:app_flutter/features/Sign_in/Sign_in_page.dart';
 import 'package:app_flutter/features/sign_up/Sign_up_page.dart';
 import 'package:app_flutter/features/splash/splash_page.dart';
@@ -32,7 +32,7 @@ class _MyWidgetState extends State<AppWidget> {
         NamedRoutes.inicial: (context) => const SignUpPage(),
         NamedRoutes.splash: (context) => const SplashPage(),
         NamedRoutes.login: (context) => const SignIn(),
-        NamedRoutes.email: (context) => const Emailvalidating()
+        NamedRoutes.email: (context) => EmailValidationScreen()
       },
     );
   }
