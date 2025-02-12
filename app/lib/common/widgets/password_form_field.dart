@@ -1,4 +1,4 @@
-import 'package:app_flutter/common/widgets/WidgetFormulario.dart';
+import 'package:app_flutter/common/widgets/widget_formulario.dart';
 import 'package:flutter/material.dart';
 
 class Passwordformfield extends StatefulWidget {
@@ -45,7 +45,6 @@ class _PasswordformfieldState extends State<Passwordformfield> {
               borderRadius: BorderRadius.circular(28.0),
               child: Icon(isHidden ? Icons.visibility : Icons.visibility_off),
               onTap: () {
-                print('precionado');
                 setState(() {
                   isHidden = !isHidden;
                 });

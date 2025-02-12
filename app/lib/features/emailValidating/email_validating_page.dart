@@ -1,8 +1,8 @@
 import 'package:app_flutter/common/constant/app_colors.dart';
 import 'package:app_flutter/common/constant/app_text_style.dart';
 import 'package:app_flutter/common/constant/routes.dart';
-import 'package:app_flutter/common/widgets/CustomEmailForm.dart';
-import 'package:app_flutter/common/widgets/PrimeryButton.dart';
+import 'package:app_flutter/common/widgets/custom_email_form.dart';
+import 'package:app_flutter/common/widgets/primery_button.dart';
 import 'package:flutter/material.dart';
 
 class EmailValidationScreen extends StatelessWidget {
@@ -20,7 +20,7 @@ class EmailValidationScreen extends StatelessWidget {
           ListView(
             children: [
               const SizedBox(height: 120),
-              Container(
+              SizedBox(
                 height: 150,
                 width: 150,
                 child: Center(
@@ -69,8 +69,8 @@ class EmailValidationScreen extends StatelessWidget {
                   color: Colors.white,
                   child: InkWell(
                     onTap: () {},
-                    splashColor: Colors.blue.withOpacity(0.1),
-                    highlightColor: Colors.blue.withOpacity(0.1),
+                    splashColor: Colors.blue.withValues(alpha: 0.1),
+                    highlightColor: Colors.blue.withValues(alpha: 0.1),
                     child: const Align(
                       child: Text(
                         'Enviar novamente.',

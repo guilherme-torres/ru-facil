@@ -3,12 +3,12 @@ import 'package:app_flutter/common/constant/app_colors.dart';
 import 'package:app_flutter/common/constant/app_text_style.dart';
 import 'package:app_flutter/common/constant/routes.dart';
 import 'package:app_flutter/common/utils/validator.dart';
-import 'package:app_flutter/common/widgets/CustomCircularProgressIndicator.dart';
-import 'package:app_flutter/common/widgets/PasswordFormField.dart';
-import 'package:app_flutter/common/widgets/PrimeryButton.dart';
-import 'package:app_flutter/common/widgets/WidgetFormulario.dart';
+import 'package:app_flutter/common/widgets/custom_circular_progress_indicator.dart';
+import 'package:app_flutter/common/widgets/password_form_field.dart';
+import 'package:app_flutter/common/widgets/primery_button.dart';
+import 'package:app_flutter/common/widgets/widget_formulario.dart';
 import 'package:app_flutter/common/widgets/custom_Botton_Sheet.dart';
-import 'package:app_flutter/features/sign_up/Sign_up_controller.dart';
+import 'package:app_flutter/features/sign_up/sign_up_controller.dart';
 import 'package:app_flutter/features/sign_up/Sign_up_state.dart';
 import 'package:app_flutter/services/mock_auth_service.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,7 @@ class _SignUpPage extends State<SignUpPage> {
             const SizedBox(
               height: 60,
             ),
-            Container(
+            SizedBox(
               height: 150,
               width: 150,
               child: Center(
@@ -174,8 +174,8 @@ class _SignUpPage extends State<SignUpPage> {
                         NamedRoutes.login,
                       );
                     },
-                    splashColor: Colors.blue.withOpacity(0.1),
-                    highlightColor: Colors.blue.withOpacity(0.1),
+                    splashColor: Colors.blue.withValues(alpha: 0.1),
+                    highlightColor: Colors.blue.withValues(alpha: 0.1),
                     child: const Align(
                       child: Text(
                         ' Fazer login.',

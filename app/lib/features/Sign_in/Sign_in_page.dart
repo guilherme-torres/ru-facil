@@ -1,8 +1,9 @@
 import 'package:app_flutter/common/constant/app_colors.dart';
 import 'package:app_flutter/common/constant/app_text_style.dart';
-import 'package:app_flutter/common/widgets/PasswordFormField.dart';
-import 'package:app_flutter/common/widgets/PrimeryButton.dart';
-import 'package:app_flutter/common/widgets/WidgetFormulario.dart';
+import 'package:app_flutter/common/widgets/password_form_field.dart';
+import 'package:app_flutter/common/widgets/primery_button.dart';
+import 'package:app_flutter/common/widgets/widget_formulario.dart';
+import 'package:app_flutter/common/constant/routes.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -20,7 +21,7 @@ class SignIn extends StatelessWidget {
                 const SizedBox(
                   height: 120,
                 ),
-                Container(
+                SizedBox(
                   height: 150,
                   width: 150,
                   child: Center(
@@ -67,9 +68,31 @@ class SignIn extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 60.0),
                   child: PrimeryButton(
                     text: 'Entrar',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, NamedRoutes.navigation);
+                    },
                   ),
-                )
+                ),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 125.0),
+                  child: Material(
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: () {},
+                      splashColor: Colors.blue.withValues(alpha: 0.1),
+                      highlightColor: Colors.blue.withValues(alpha: 0.1),
+                      child: const Align(
+                        child: Text(
+                          'Esqueci minha senha.',
+                          softWrap: false,
+                          style: TextStyle(
+                              fontSize: 15, color: AppColors.azulEscuro1),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
