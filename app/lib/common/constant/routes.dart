@@ -9,4 +9,5 @@ class NamedRoutes {
   static const String email = "email";
   static const String token = "token";
   static const String navigation = "navigation";
+  static const String qrcode = "qrcode";
 }
