@@ -1,3 +1,4 @@
+import 'package:app_flutter/common/constant/app_colors.dart';
 import 'package:app_flutter/common/constant/routes.dart';
 import 'package:app_flutter/features/emailValidating/email_validating_page.dart';
 import 'package:app_flutter/features/navigationBottom/navigation_bottom.dart';
@@ -25,6 +26,9 @@ class _MyWidgetState extends State<AppWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textSelectionTheme: TextSelectionThemeData(
+          selectionHandleColor: AppColors.azulEscuro2,
+        ),
         inputDecorationTheme: const InputDecorationTheme(
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black),

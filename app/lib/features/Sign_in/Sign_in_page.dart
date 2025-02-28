@@ -18,9 +18,7 @@ class SignIn extends StatelessWidget {
             color: Colors.white,
             child: ListView(
               children: [
-                const SizedBox(
-                  height: 120,
-                ),
+                const SizedBox(height: 120),
                 SizedBox(
                   height: 150,
                   width: 150,
@@ -28,11 +26,12 @@ class SignIn extends StatelessWidget {
                     child: Image.asset('assets/images/image 4.png'),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                const SizedBox(height: 20),
+                const Text(
+                  'Bem-vindo!',
+                  textAlign: TextAlign.center,
+                  style: AppTextStyle.bigText,
                 ),
-                const Text('Bem-vindo!',
-                    textAlign: TextAlign.center, style: AppTextStyle.bigText),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.0),
                   child: Text(
@@ -41,9 +40,7 @@ class SignIn extends StatelessWidget {
                     style: AppTextStyle.subText1,
                   ),
                 ),
-                const SizedBox(
-                  height: 40.0,
-                ),
+                const SizedBox(height: 40.0),
                 const Form(
                   child: Column(
                     children: [
@@ -51,19 +48,12 @@ class SignIn extends StatelessWidget {
                         texto: 'E-mail',
                         hind: 'Aluno@ufpi.edu.br',
                       ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Passwordformfield(
-                        texto: 'senha',
-                        hind: '********',
-                      ),
+                      SizedBox(height: 20.0),
+                      Passwordformfield(texto: 'senha', hind: '********'),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 20.0,
-                ),
+                const SizedBox(height: 20.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 60.0),
                   child: PrimeryButton(
@@ -75,7 +65,7 @@ class SignIn extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 125.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 115.0),
                   child: Material(
                     color: Colors.white,
                     child: InkWell(
@@ -87,7 +77,9 @@ class SignIn extends StatelessWidget {
                           'Esqueci minha senha.',
                           softWrap: false,
                           style: TextStyle(
-                              fontSize: 15, color: AppColors.azulEscuro1),
+                            fontSize: 15,
+                            color: AppColors.azulEscuro1,
+                          ),
                         ),
                       ),
                     ),

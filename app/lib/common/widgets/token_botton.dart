@@ -23,7 +23,7 @@ class Tokens extends StatelessWidget {
                 top: 21.0,
                 left: 40.0,
                 child: Text(
-                  "Código ${codeList[index]}",
+                  codeList[index]!,
                   style: AppTextStyle.subText2.copyWith(
                     color: AppColors.cinzaEscuro,
                   ),

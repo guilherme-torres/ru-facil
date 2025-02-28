@@ -1,3 +1,4 @@
+import 'package:app_flutter/common/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class EmailValidating extends StatelessWidget {
@@ -19,12 +20,14 @@ class EmailValidating extends StatelessWidget {
       child: SizedBox(
         width: 50,
         child: TextFormField(
+          cursorColor: AppColors.azulEscuro2,
           controller: controller,
           focusNode: focusNode,
           decoration: InputDecoration(
             counterText: '',
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
           ),
           keyboardType: TextInputType.number,
           maxLength: 1,

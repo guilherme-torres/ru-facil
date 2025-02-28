@@ -26,30 +26,22 @@ class QrCode extends StatelessWidget {
           Center(
             child: Container(
               color: Color.fromRGBO(255, 255, 255, 1),
-              width: 350,
-              height: 450,
-              child: Column(
-                children: [
-                  const SizedBox(height: 40),
-                  Text(
-                    codeList[currentIndex]!,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.cinzaEscuro,
-                    ),
-                  ),
-                  const SizedBox(height: 100),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 50,
-                      right: 50,
-                      bottom: 10,
-                    ),
-                    child: PrettyQrView.data(data: codeList[currentIndex]!),
-                  ),
-                ],
-              ),
+              width: 330,
+              height: 440,
+            ),
+          ),
+          Positioned(
+            top: 210,
+            left: 120,
+            child: Text(
+              codeList[currentIndex]!,
+              style: TextStyle(fontSize: 28),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 280),
+              child: PrettyQrView.data(data: codeList[currentIndex]!),
             ),
           ),
         ],

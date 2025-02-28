@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 
 class EmailValidationScreen extends StatelessWidget {
   EmailValidationScreen({super.key});
-  final List<TextEditingController> controllers =
-      List.generate(6, (index) => TextEditingController());
+  final List<TextEditingController> controllers = List.generate(
+    6,
+    (index) => TextEditingController(),
+  );
   final List<FocusNode> focusNodes = List.generate(6, (index) => FocusNode());
 
   @override
@@ -23,16 +25,15 @@ class EmailValidationScreen extends StatelessWidget {
               SizedBox(
                 height: 150,
                 width: 150,
-                child: Center(
-                  child: Image.asset('assets/images/image 4.png'),
-                ),
+                child: Center(child: Image.asset('assets/images/image 4.png')),
               ),
               const SizedBox(height: 20),
               Text(
                 'Verifique seu e-mail',
                 textAlign: TextAlign.center,
-                style: AppTextStyle.mediumText1
-                    .copyWith(color: AppColors.azulEscuro2),
+                style: AppTextStyle.mediumText1.copyWith(
+                  color: AppColors.azulEscuro2,
+                ),
               ),
               const SizedBox(height: 20),
               const Padding(
@@ -57,10 +58,7 @@ class EmailValidationScreen extends StatelessWidget {
               const SizedBox(height: 40.0),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 80.0),
-                child: PrimeryButton(
-                  text: "Confirmar",
-                  onPressed: () {},
-                ),
+                child: PrimeryButton(text: "Confirmar", onPressed: () {}),
               ),
               const SizedBox(height: 10.0),
               Padding(
@@ -75,7 +73,9 @@ class EmailValidationScreen extends StatelessWidget {
                       child: Text(
                         'Enviar novamente.',
                         style: TextStyle(
-                            fontSize: 15, color: AppColors.azulEscuro1),
+                          fontSize: 15,
+                          color: AppColors.azulEscuro1,
+                        ),
                       ),
                     ),
                   ),
